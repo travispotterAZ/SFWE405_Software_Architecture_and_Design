@@ -1,0 +1,119 @@
+http://localhost:8080/
+
+-----------------------------------
+
+Contests - "UofA_Programming_Contest"   "UofA-SWFE405_Final"
+
+/all
+
+/contests/{id}
+
+/contests/{ContestName}/teams
+
+/contests/{ContestName}/occupancy
+
+/contests//addContest
+{
+  "name": "Math Olympiad 2026",
+  "capacity": 10,
+  "editable": true
+}
+
+/contests/teamReg?contest_id=#
+{
+  "id" = #?   //This is the id of team you want to register to contest
+}
+
+/contests/editContest
+{
+  "id" = "2"
+  "name" = "New Name"
+  "occupancy" = 100
+}
+
+/contests/setEditable
+{
+  "id" : # //id of Contest wanted to setEditable
+}
+
+/contests/setReadOnly
+{
+  "id" : # //id of Contest wanted to setReadOnly
+}
+
+/contests/promoteTeam?superContest_id=#&team_id=# //# need to be input
+
+-----------------------------------
+
+
+Reports
+/reports/students/age
+
+-----------------------------------
+
+Person
+
+/all
+
+/person/addMember
+{
+  "name": "John",
+  "email": "john@email.com",
+  "university": "Arizona",
+  "role": "Student",
+  "birthdate": "2004-02-16"
+}
+
+/person/addCoach
+{
+  "name": "Coach Davis",
+  "role": "Coach"
+}
+
+/person/addManager
+{
+  "name" : "Manager Isiah",
+  "role" : "Manager"
+}
+
+-----------------------------------
+
+
+Teams 
+/teams/all
+
+/teams/{id}
+
+/teams/addTeam
+{
+  "Team_Name": "Sooners",
+  "Rank": 2,
+  "state": "Pending",
+  "members": [
+    { "id": 15 },
+    { "id": 16 },
+    { "id": 17 }
+  ]
+}
+
+/teams/assignTeamToCoach?team_id={#}&coach_id={#}
+
+/teams/editTeam
+{
+  "id" : #    //id of team wanted to edit
+  "Team_Name" : "New_Name"
+  //other attributes
+}
+
+/teams/setEditable
+{
+  "id" : # //id of team wanted to setEditable
+}
+
+/teams/setReadOnly
+{
+  "id" : # //id of team wanted to setReadOnly
+}
+
+
+

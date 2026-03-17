@@ -1,0 +1,50 @@
+// Send raw messages
+void send(Message message) throws AmqpException;
+void send(String routingKey, Message message) throws AmqpException;
+void send(String exchange, String routingKey, Message message)
+                           throws AmqpException;
+ 
+// Send messages converted from objects
+void convertAndSend(Object message) throws AmqpException;
+void convertAndSend(String routingKey, Object message)
+                           throws AmqpException;
+void convertAndSend(String exchange, String routingKey,
+                    Object message) throws AmqpException;
+ 
+// Send messages converted from objects with post-processing
+void convertAndSend(Object message, MessagePostProcessor mPP)
+                           throws AmqpException;
+void convertAndSend(String routingKey, Object message,
+                    MessagePostProcessor messagePostProcessor)
+                    throws AmqpException;
+void convertAndSend(String exchange, String routingKey,
+                    Object message,
+                    MessagePostProcessor messagePostProcessor)
+                    throws AmqpException;
+
+
+// Receive messages
+Message receive() throws AmqpException;
+Message receive(String queueName) throws AmqpException;
+Message receive(long timeoutMillis) throws AmqpException;
+Message receive(String queueName, long timeoutMillis) throws AmqpException;
+ 
+// Receive objects converted from messages
+Object receiveAndConvert() throws AmqpException;
+Object receiveAndConvert(String queueName) throws AmqpException;
+Object receiveAndConvert(long timeoutMillis) throws AmqpException;
+Object receiveAndConvert(String queueName, long timeoutMillis)
+                                                    throws AmqpException;
+ 
+// Receive type-safe objects converted from messages
+<T> T receiveAndConvert(ParameterizedTypeReference<T> type)
+                                                      throws AmqpException;
+<T> T receiveAndConvert(
+    String queueName, ParameterizedTypeReference<T> type)
+                                                      throws AmqpException;
+<T> T receiveAndConvert(
+    long timeoutMillis, ParameterizedTypeReference<T> type)
+                                                      throws AmqpException;
+<T> T receiveAndConvert(String queueName, long timeoutMillis,
+    ParameterizedTypeReference<T> type)
+                                                      throws AmqpException;

@@ -1,0 +1,31 @@
+{
+  "info": {
+    "_postman_id": "2ebe0a5b-8c5f-4d89-a4c3-7095bd09814a",
+    "name": "See All People in Database",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51743897",
+    "_collection_link": "https://go.postman.co/collection/51743897-2ebe0a5b-8c5f-4d89-a4c3-7095bd09814a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "all.Person.Entities",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/person/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "person",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
